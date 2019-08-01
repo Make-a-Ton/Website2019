@@ -17,8 +17,7 @@
 
 ******************************/
 
-$(document).ready(function()
-{
+$(document).ready(function () {
 	"use strict";
 
 	/* 
@@ -34,13 +33,11 @@ $(document).ready(function()
 
 	setHeader();
 
-	$(window).on('resize', function()
-	{
+	$(window).on('resize', function () {
 		setHeader();
 	});
 
-	$(document).on('scroll', function()
-	{
+	$(document).on('scroll', function () {
 		setHeader();
 	});
 
@@ -59,27 +56,20 @@ $(document).ready(function()
 
 	*/
 
-	function init_ie_check()
-	{
+	function init_ie_check() {
 		var version = detectIE();
 		var logo = $('.logo_text');
 
-		if(version === false)
-		{
-			
-		}
-		else if(version >= 12)
-		{
-			
-		}
-		else
-		{
+		if (version === false) {
+
+		} else if (version >= 12) {
+
+		} else {
 			logo.removeClass('logo_text_not_ie');
 		}
 	}
 
-	function detectIE()
-	{
+	function detectIE() {
 		var ua = window.navigator.userAgent;
 
 		var msie = ua.indexOf('MSIE ');
@@ -111,14 +101,10 @@ $(document).ready(function()
 
 	*/
 
-	function setHeader()
-	{
-		if($(window).scrollTop() > 127)
-		{
+	function setHeader() {
+		if ($(window).scrollTop() > 127) {
 			header.addClass('scrolled');
-		}
-		else
-		{
+		} else {
 			header.removeClass('scrolled');
 		}
 	}
@@ -129,14 +115,11 @@ $(document).ready(function()
 
 	*/
 
-	function initSearch()
-	{
-		if($('.header_search').length)
-		{
+	function initSearch() {
+		if ($('.header_search').length) {
 			var search = $('.header_search');
 			var panel = $('.search_container');
-			search.on('click', function()
-			{
+			search.on('click', function () {
 				panel.toggleClass('active');
 			});
 		}
@@ -148,49 +131,37 @@ $(document).ready(function()
 
 	*/
 
-	function initMenu()
-	{
-		if($('.hamburger').length && $('.menu').length)
-		{
+	function initMenu() {
+		if ($('.hamburger').length && $('.menu').length) {
 			var hamb = $('.hamburger');
 			var close = $('.menu_close_container');
 
-			hamb.on('click', function()
-			{
-				if(!menuActive)
-				{
+			hamb.on('click', function () {
+				if (!menuActive) {
 					openMenu();
-				}
-				else
-				{
+				} else {
 					closeMenu();
 				}
 			});
 
-			close.on('click', function()
-			{
-				if(!menuActive)
-				{
+			close.on('click', function () {
+				if (!menuActive) {
 					openMenu();
-				}
-				else
-				{
+				} else {
 					closeMenu();
 				}
 			});
 
-	
+
 		}
 	}
 
-	function openMenu()
-	{
+	function openMenu() {
 		menu.addClass('active');
 		menuActive = true;
 	}
 
-	function closeMenu()
-	{
+	function closeMenu() {
 		menu.removeClass('active');
 		menuActive = false;
 	}
@@ -201,62 +172,45 @@ $(document).ready(function()
 
 	*/
 
-	function initAccordions()
-	{
-		if($('.accordion').length)
-		{
+	function initAccordions() {
+		if ($('.accordion').length) {
 			var accs = $('.accordion');
 
-			accs.each(function()
-			{
+			accs.each(function () {
 				var acc = $(this);
 
-				if(acc.hasClass('active'))
-				{
+				if (acc.hasClass('active')) {
 					var panel = $(acc.next());
 					var panelH = panel.prop('scrollHeight') + "px";
-					
-					if(panel.css('max-height') == "0px")
-					{
+
+					if (panel.css('max-height') == "0px") {
 						panel.css('max-height', panel.prop('scrollHeight') + "px");
-					}
-					else
-					{
+					} else {
 						panel.css('max-height', "0px");
-					} 
+					}
 				}
 
-				acc.on('click', function()
-				{
-					if(acc.hasClass('active'))
-					{
+				acc.on('click', function () {
+					if (acc.hasClass('active')) {
 						acc.removeClass('active');
 						var panel = $(acc.next());
 						var panelH = panel.prop('scrollHeight') + "px";
-						
-						if(panel.css('max-height') == "0px")
-						{
+
+						if (panel.css('max-height') == "0px") {
 							panel.css('max-height', panel.prop('scrollHeight') + "px");
-						}
-						else
-						{
+						} else {
 							panel.css('max-height', "0px");
-						} 
-					}
-					else
-					{
+						}
+					} else {
 						acc.addClass('active');
 						var panel = $(acc.next());
 						var panelH = panel.prop('scrollHeight') + "px";
-						
-						if(panel.css('max-height') == "0px")
-						{
+
+						if (panel.css('max-height') == "0px") {
 							panel.css('max-height', panel.prop('scrollHeight') + "px");
-						}
-						else
-						{
+						} else {
 							panel.css('max-height', "0px");
-						} 
+						}
 					}
 				});
 			});
@@ -269,12 +223,9 @@ $(document).ready(function()
 
 	*/
 
-	function initTabs()
-	{
-		if($('.tab').length)
-		{
-			$('.tab').on('click', function()
-			{
+	function initTabs() {
+		if ($('.tab').length) {
+			$('.tab').on('click', function () {
 				$('.tab').removeClass('active');
 				$(this).addClass('active');
 				var clickedIndex = $('.tab').index(this);
@@ -292,93 +243,86 @@ $(document).ready(function()
 
 	*/
 
-	function initMilestones()
-	{
-		if($('.milestone_counter').length)
-		{
+	function initMilestones() {
+		if ($('.milestone_counter').length) {
 			var milestoneItems = $('.milestone_counter');
 
-	    	milestoneItems.each(function(i)
-	    	{
-	    		var ele = $(this);
-	    		var endValue = ele.data('end-value');
-	    		var eleValue = ele.text();
+			milestoneItems.each(function (i) {
+				var ele = $(this);
+				var endValue = ele.data('end-value');
+				var eleValue = ele.text();
 
-	    		/* Use data-sign-before and data-sign-after to add signs
-	    		infront or behind the counter number (+, k, etc) */
-	    		var signBefore = "";
-	    		var signAfter = "";
+				/* Use data-sign-before and data-sign-after to add signs
+				infront or behind the counter number (+, k, etc) */
+				var signBefore = "";
+				var signAfter = "";
 
-	    		if(ele.attr('data-sign-before'))
-	    		{
-	    			signBefore = ele.attr('data-sign-before');
-	    		}
+				if (ele.attr('data-sign-before')) {
+					signBefore = ele.attr('data-sign-before');
+				}
 
-	    		if(ele.attr('data-sign-after'))
-	    		{
-	    			signAfter = ele.attr('data-sign-after');
-	    		}
+				if (ele.attr('data-sign-after')) {
+					signAfter = ele.attr('data-sign-after');
+				}
 
-	    		var milestoneScene = new ScrollMagic.Scene({
-		    		triggerElement: this,
-		    		triggerHook: 'onEnter',
-		    		reverse:false
-		    	})
-		    	.on('start', function()
-		    	{
-		    		var counter = {value:eleValue};
-		    		var counterTween = TweenMax.to(counter, 4,
-		    		{
-		    			value: endValue,
-		    			roundProps:"value", 
-						ease: Circ.easeOut, 
-						onUpdate:function()
-						{
-							document.getElementsByClassName('milestone_counter')[i].innerHTML = signBefore + counter.value + signAfter;
-						}
-		    		});
-		    	})
-			    .addTo(ctrl);
-	    	});
+				var milestoneScene = new ScrollMagic.Scene({
+						triggerElement: this,
+						triggerHook: 'onEnter',
+						reverse: false
+					})
+					.on('start', function () {
+						var counter = {
+							value: eleValue
+						};
+						var counterTween = TweenMax.to(counter, 4, {
+							value: endValue,
+							roundProps: "value",
+							ease: Circ.easeOut,
+							onUpdate: function () {
+								document.getElementsByClassName('milestone_counter')[i].innerHTML = signBefore + counter.value + signAfter;
+							}
+						});
+					})
+					.addTo(ctrl);
+			});
 		}
 	}
 
+
+
 	/* 
 
-	7. Init Loaders
+	8. Init Loaders
 
 	*/
 
-	function initLoaders()
-	{
-		if($('.loader').length)
-		{
+	function initLoaders() {
+		if ($('.loader').length) {
 			var loaders = $('.circle');
 
-			loaders.each(function()
-			{
+			loaders.each(function () {
 				var loader = $(this);
 				var endValue = $(loader).data('perc');
 
 				var loaderScene = new ScrollMagic.Scene({
-		    		triggerElement: this,
-		    		triggerHook: 'onEnter',
-		    		reverse:false
-		    	})
-		    	.on('start', function()
-		    	{
-		    		loader.circleProgress({
-						startAngle: 4.66,
-						thickness: 4,
-						size: 185,
-						emptyFill:"transparent",
-						fill: {gradient:["#4867c0", "#329fec"]},
-					}).on('circle-animation-progress', function(event, progress, stepValue)
-						{
+						triggerElement: this,
+						triggerHook: 'onEnter',
+						reverse: false
+					})
+					.on('start', function () {
+						loader.circleProgress({
+							startAngle: 4.66,
+							thickness: 4,
+							size: 185,
+							emptyFill: "transparent",
+							fill: {
+								gradient: ["#4867c0", "#329fec"]
+							},
+						}).on('circle-animation-progress', function (event, progress, stepValue) {
 							$(this).find('strong').text(Math.round(stepValue * 100) + "%");
 						});
-		    	})
-			    .addTo(ctrl);
+					})
+					.addTo(ctrl);
 			});
 		}
 	}
