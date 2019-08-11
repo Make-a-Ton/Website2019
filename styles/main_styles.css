@@ -1250,6 +1250,88 @@ section {
 
 
 /*********************************
+Partners
+*********************************/
+
+/* Sponsors Footer */
+
+.sponsorsFooter {
+  width: 100%;
+  height: auto;
+  padding: 40px 0 10px;
+  z-index: 14;
+  margin-top: 0px;
+  z-index: 1 !important;
+  text-align: center !important;
+  z-index: 99;
+}
+
+.sponsorsFooter h1 {
+  font-weight: 300 !important;
+  color: #434A54 !important;
+  font-size: 22px;
+}
+.sponsorsFooter h1 > strong { font-weight: 700 !important;}
+
+.sponsorsFooter img {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  height: auto;
+  vertical-align: middle;
+  max-width: 200px;
+  transition: all 0.5s;
+}
+
+.sponsorsFooter ul {
+  padding: 0;
+  margin: 15px 0 0 0;
+  list-style: none;
+  display: block;
+}
+
+.sponsorsFooter ul.enter > span:not(.hover) {
+  opacity: .1;
+}
+
+
+.sponsorsFooter ul.enter > span.hover img{
+	transform: scale(1.2);
+}
+.sponsorsFooter ul.enter > span.hover {
+  opacity: 1;
+  transform: scale(1.2);
+  box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, .1), inset 1px 0 0 0 rgba(0, 0, 0, .1);
+}
+
+.sponsorsFooter ul span {
+  display: inline !important;
+  background: white;
+  word-break: break-all;
+  word-wrap: break-word;
+  margin: 0px;
+  padding: 26px 0;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -ms-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.sponsorsFooter ul span,
+.sponsorsFooter ul span li > a {
+  cursor: default !important;
+  border: none !important;
+  outline: 0 !important;
+  text-decoration: none !important;
+}
+
+.sponsorsFooter ul li {
+  margin: 35px 16px 0px;
+  display: inline-block;
+}
+
+/*********************************
 contact
 *********************************/
 .contact_section {
