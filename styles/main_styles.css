@@ -31,9 +31,6 @@
 2. Body and some general stuff
 *********************************/
 
-.img-cittic {
-	height: 60px;
-}
 
 * {
 	margin: 0;
@@ -1587,4 +1584,8 @@ p {
 .toggle .toggle-title.active i {
 	background: url("http://arielbeninca.com/Storage/plus_minus.png") 0px 0px no-repeat;
 
+}
+
+img.rounded.float-left.img-cittic {
+    height: 68px;
 }
