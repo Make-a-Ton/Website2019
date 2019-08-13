@@ -64,12 +64,15 @@ $(document).ready(function()
 		  $(this).addClass('hover');
 		  var setTitle = $(this).attr("data-group-title");
 		  var groupName = $(this).attr("data-group-name");
+		  sponsorTitle = $("#" + groupName)
 		  group = $("." + groupName);
 		  group.addClass('enter');
 		  sponsorTitle.html(setTitle);
 		}).mouseleave(function() {
 		  $(this).removeClass('hover');
 		  group.removeClass('enter');
+		  var groupName = $(this).attr("data-group-name");
+		  sponsorTitle = $("#" + groupName);
 		  var setTitle = $(sponsorTitle).attr("data-default-title");
 		  sponsorTitle.html(setTitle);
 		});
