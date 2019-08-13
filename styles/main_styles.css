@@ -878,7 +878,7 @@ section {
 }
 
 .intro_item {
-	width: calc((100% - 60px) / 3);
+	width: calc((100% - 140px) / 2);
 	background: #f3f7f9;
 	margin-bottom: 48px;
 }
