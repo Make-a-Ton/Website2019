@@ -55,20 +55,23 @@ $(document).ready(function()
 	*/
 	
 	function initPartners() {
-		var __sf = $(".sponsorsFooter ul span");
-		var __sf_cont = $(".sponsorsFooter ul");
-		var __title = $("#sponsorTitle");
 
-		__sf.mouseenter(function() {
+		var sponsor = $(".sponsorsFooter ul span");
+		var group = $(".sponsorsFooter ul");
+		var sponsorTitle = $("#sponsorTitle");
+
+		sponsor.mouseenter(function() {
 		  $(this).addClass('hover');
-		  __sf_cont.addClass('enter');
-		  var __setTitle = $(this).attr("data-group-title");
-		  __title.html(__setTitle);
+		  var setTitle = $(this).attr("data-group-title");
+		  var groupName = $(this).attr("data-group-name");
+		  group = $("." + groupName);
+		  group.addClass('enter');
+		  sponsorTitle.html(setTitle);
 		}).mouseleave(function() {
 		  $(this).removeClass('hover');
-		  __sf_cont.removeClass('enter');
-		  var __setTitle = $(__title).attr("data-default-title");
-		  __title.html(__setTitle);
+		  group.removeClass('enter');
+		  var setTitle = $(sponsorTitle).attr("data-default-title");
+		  sponsorTitle.html(setTitle);
 		});
 	}
 
