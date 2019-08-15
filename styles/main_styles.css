@@ -544,7 +544,7 @@ section {
 }
 
 .home_text {
-	font-size: 14px;
+	font-size: 22px;
 	font-weight: 500;
 	color: #FFFFFF;
 	line-height: 2.14;
@@ -552,7 +552,7 @@ section {
 }
 
 .home_buttons {
-	margin-top: 58px;
+	margin-top: 23px;
 }
 
 .home_button {
