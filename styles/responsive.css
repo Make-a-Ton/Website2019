@@ -380,7 +380,7 @@
 	}
 	.calendar_item_time div:first-child
 	{
-		font-size: 24px;
+		font-size: 18px;
 	}
 	.calendar_item_time div:last-child
 	{
@@ -388,7 +388,7 @@
 	}
 	.calendar_item_text div:first-child
 	{
-		font-size: 16px;
+		font-size: 14px;
 	}
 	.calendar_item_text div:nth-child(2)
 	{
